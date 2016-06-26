@@ -1,0 +1,5 @@
+#!/bin/sh
+
+SHELL_PATH=$(cd $(dirname $0);pwd)
+
+swiftlint && $SHELL_PATH/swift build && $SHELL_PATH/swift test
