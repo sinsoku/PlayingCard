@@ -1,6 +1,6 @@
 import XCTest
-@testable import appTestSuite
+@testable import PlayingCardTestSuite
 
 XCTMain([
-     testCase(appTests.allTests),
+     testCase(CardTests.allTests),
 ])
