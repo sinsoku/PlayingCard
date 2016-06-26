@@ -33,6 +33,14 @@ enum Rank {
         }
     }
 
+    init?(number: Int) {
+      if 1...13 ~= number {
+          self = Rank.fromInt(number: number)!
+      } else {
+          return nil
+      }
+    }
+
     func toInt() -> Int? {
         switch self {
           case .Ace: return 1
