@@ -1,6 +1,6 @@
 struct Card {
-  var rank: Rank
-  var suit: Suit
+  let rank: Rank
+  let suit: Suit
 }
 
 extension Card: Equatable { }
