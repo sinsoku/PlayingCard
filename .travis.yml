@@ -11,3 +11,6 @@ before_install:
 script:
   - bin/swift build
   - bin/swift test
+
+notifications:
+  email: false
