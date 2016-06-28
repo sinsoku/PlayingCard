@@ -4,9 +4,9 @@ struct Card<T: CardComparable>: Comparable {
 }
 
 func == <T>(lhs: Card<T>, rhs: Card<T>) -> Bool {
-    return T.equal(lhs, rhs)
+    return T.eq(lhs, rhs)
 }
 
 func < <T>(lhs: Card<T>, rhs: Card<T>) -> Bool {
-    return T.compare(lhs, rhs)
+    return T.lt(lhs, rhs)
 }

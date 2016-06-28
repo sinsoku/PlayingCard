@@ -1,4 +1,4 @@
 protocol CardComparable {
-    static func equal<T>(_ lhs: Card<T>, _ rhs: Card<T>) -> Bool
-    static func compare<T>(_ lhs: Card<T>, _ rhs: Card<T>) -> Bool
+    static func eq<T>(_ lhs: Card<T>, _ rhs: Card<T>) -> Bool
+    static func lt<T>(_ lhs: Card<T>, _ rhs: Card<T>) -> Bool
 }
