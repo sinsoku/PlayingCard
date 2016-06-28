@@ -1,4 +1,4 @@
-enum Rank {
+enum Rank: Int {
     case Ace
     case Two
     case Three

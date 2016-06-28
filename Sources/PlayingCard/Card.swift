@@ -1,9 +1,12 @@
-struct Card {
+struct Card<T: CardComparable>: Comparable {
   let rank: Rank
   let suit: Suit
 }
 
-extension Card: Equatable { }
-func == (lhs: Card, rhs: Card) -> Bool {
-    return lhs.rank == rhs.rank && lhs.suit == rhs.suit
+func == <T>(lhs: Card<T>, rhs: Card<T>) -> Bool {
+    return T.equal(lhs, rhs)
+}
+
+func < <T>(lhs: Card<T>, rhs: Card<T>) -> Bool {
+    return T.compare(lhs, rhs)
 }
