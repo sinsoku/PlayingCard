@@ -26,38 +26,22 @@ class PokerTests: XCTestCase {
 
     func testRoyalStraightFlush() {
         let spadeCards: Set<CardPc> = [
-          CardPc(rank: .Ten, suit: .Spade),
-          CardPc(rank: .Jack, suit: .Spade),
-          CardPc(rank: .Queen, suit: .Spade),
-          CardPc(rank: .King, suit: .Spade),
-          CardPc(rank: .Ace, suit: .Spade)
+          CardPc("10S")!, CardPc("11S")!, CardPc("12S")!, CardPc("13S")!, CardPc("1S")!
         ]
         XCTAssertEqual(Poker.Hand.judge(spadeCards), Poker.Hand.RoyalStraightFlush)
 
         let heartCards: Set<CardPc> = [
-          CardPc(rank: .Ten, suit: .Heart),
-          CardPc(rank: .Jack, suit: .Heart),
-          CardPc(rank: .Queen, suit: .Heart),
-          CardPc(rank: .King, suit: .Heart),
-          CardPc(rank: .Ace, suit: .Heart)
+          CardPc("10H")!, CardPc("11H")!, CardPc("12H")!, CardPc("13H")!, CardPc("1H")!
         ]
         XCTAssertEqual(Poker.Hand.judge(heartCards), Poker.Hand.RoyalStraightFlush)
 
         let clubCards: Set<CardPc> = [
-          CardPc(rank: .Ten, suit: .Club),
-          CardPc(rank: .Jack, suit: .Club),
-          CardPc(rank: .Queen, suit: .Club),
-          CardPc(rank: .King, suit: .Club),
-          CardPc(rank: .Ace, suit: .Club)
+          CardPc("10C")!, CardPc("11C")!, CardPc("12C")!, CardPc("13C")!, CardPc("1C")!
         ]
         XCTAssertEqual(Poker.Hand.judge(clubCards), Poker.Hand.RoyalStraightFlush)
 
         let diamondCards: Set<CardPc> = [
-          CardPc(rank: .Ten, suit: .Diamond),
-          CardPc(rank: .Jack, suit: .Diamond),
-          CardPc(rank: .Queen, suit: .Diamond),
-          CardPc(rank: .King, suit: .Diamond),
-          CardPc(rank: .Ace, suit: .Diamond)
+          CardPc("10D")!, CardPc("11D")!, CardPc("12D")!, CardPc("13D")!, CardPc("1D")!
         ]
         XCTAssertEqual(Poker.Hand.judge(diamondCards), Poker.Hand.RoyalStraightFlush)
     }
