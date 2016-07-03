@@ -8,6 +8,14 @@ class CardTests: XCTestCase {
         XCTAssertEqual(card.suit, Suit.Spade)
     }
 
+    func testInitWithString() {
+        XCTAssertEqual(Card<DefaultComparing>("1S"), Card<DefaultComparing>(rank: .Ace, suit: .Spade))
+        XCTAssertEqual(Card<DefaultComparing>("1H"), Card<DefaultComparing>(rank: .Ace, suit: .Heart))
+        XCTAssertEqual(Card<DefaultComparing>("1C"), Card<DefaultComparing>(rank: .Ace, suit: .Club))
+        XCTAssertEqual(Card<DefaultComparing>("1D"), Card<DefaultComparing>(rank: .Ace, suit: .Diamond))
+        XCTAssertEqual(Card<DefaultComparing>("2S"), Card<DefaultComparing>(rank: .Two, suit: .Spade))
+    }
+
     func testEquatable() {
         let card_1 = Card<DefaultComparing>(rank: .Ace, suit: .Spade)
         let card_2 = Card<DefaultComparing>(rank: .Ace, suit: .Spade)
@@ -25,6 +33,7 @@ class CardTests: XCTestCase {
     static var allTests: [(String, (CardTests) -> () throws -> Void)] {
         return [
             ("testInit", testInit),
+            ("testInitWithString", testInitWithString),
             ("testEquatable", testEquatable),
             ("testComparable", testComparable),
         ]
