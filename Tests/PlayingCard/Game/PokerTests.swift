@@ -25,24 +25,16 @@ class PokerTests: XCTestCase {
     }
 
     func testRoyalStraightFlush() {
-        let spadeCards: Set<CardPc> = [
-          CardPc("10S")!, CardPc("11S")!, CardPc("12S")!, CardPc("13S")!, CardPc("1S")!
-        ]
+        let spadeCards: Set<CardPc> = Util.factory("10S", "11S", "12S", "13S", "1S")
         XCTAssertEqual(Poker.Hand.judge(spadeCards), Poker.Hand.RoyalStraightFlush)
 
-        let heartCards: Set<CardPc> = [
-          CardPc("10H")!, CardPc("11H")!, CardPc("12H")!, CardPc("13H")!, CardPc("1H")!
-        ]
+        let heartCards: Set<CardPc> = Util.factory("10H", "11H", "12H", "13H", "1H")
         XCTAssertEqual(Poker.Hand.judge(heartCards), Poker.Hand.RoyalStraightFlush)
 
-        let clubCards: Set<CardPc> = [
-          CardPc("10C")!, CardPc("11C")!, CardPc("12C")!, CardPc("13C")!, CardPc("1C")!
-        ]
+        let clubCards: Set<CardPc> = Util.factory("10C", "11C", "12C", "13C", "1C")
         XCTAssertEqual(Poker.Hand.judge(clubCards), Poker.Hand.RoyalStraightFlush)
 
-        let diamondCards: Set<CardPc> = [
-          CardPc("10D")!, CardPc("11D")!, CardPc("12D")!, CardPc("13D")!, CardPc("1D")!
-        ]
+        let diamondCards: Set<CardPc> = Util.factory("10D", "11D", "12D", "13D", "1D")
         XCTAssertEqual(Poker.Hand.judge(diamondCards), Poker.Hand.RoyalStraightFlush)
     }
 

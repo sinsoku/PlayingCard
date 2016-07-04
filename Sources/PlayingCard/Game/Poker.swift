@@ -27,34 +27,10 @@ class Poker {
       case RoyalStraightFlush
 
       static func judge<T>(_ cards: Set<Card<T>>) -> Hand? {
-          let spadeCards: Set<Card<T>> = [
-            Card<T>(rank: .Ten, suit: .Spade),
-            Card<T>(rank: .Jack, suit: .Spade),
-            Card<T>(rank: .Queen, suit: .Spade),
-            Card<T>(rank: .King, suit: .Spade),
-            Card<T>(rank: .Ace, suit: .Spade)
-          ]
-          let heartCards: Set<Card<T>> = [
-            Card<T>(rank: .Ten, suit: .Heart),
-            Card<T>(rank: .Jack, suit: .Heart),
-            Card<T>(rank: .Queen, suit: .Heart),
-            Card<T>(rank: .King, suit: .Heart),
-            Card<T>(rank: .Ace, suit: .Heart)
-          ]
-          let clubCards: Set<Card<T>> = [
-            Card<T>(rank: .Ten, suit: .Club),
-            Card<T>(rank: .Jack, suit: .Club),
-            Card<T>(rank: .Queen, suit: .Club),
-            Card<T>(rank: .King, suit: .Club),
-            Card<T>(rank: .Ace, suit: .Club)
-          ]
-          let diamondCards: Set<Card<T>> = [
-            Card<T>(rank: .Ten, suit: .Diamond),
-            Card<T>(rank: .Jack, suit: .Diamond),
-            Card<T>(rank: .Queen, suit: .Diamond),
-            Card<T>(rank: .King, suit: .Diamond),
-            Card<T>(rank: .Ace, suit: .Diamond)
-          ]
+          let spadeCards: Set<Card<T>> = Util.factory("10S", "11S", "12S", "13S", "1S")
+          let heartCards: Set<Card<T>> = Util.factory("10H", "11H", "12H", "13H", "1H")
+          let clubCards: Set<Card<T>> = Util.factory("10C", "11C", "12C", "13C", "1C")
+          let diamondCards: Set<Card<T>> = Util.factory("10D", "11D", "12D", "13D", "1D")
 
           if [spadeCards, heartCards, clubCards, diamondCards].contains(cards) {
             return .RoyalStraightFlush
