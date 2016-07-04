@@ -1,4 +1,8 @@
-struct Card<T: CardComparable> {
+protocol CardInitializeable {
+  init?(_ value: String)
+}
+
+struct Card<T: CardComparable>: CardInitializeable {
   let rank: Rank
   let suit: Suit
 
