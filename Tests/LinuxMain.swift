@@ -6,4 +6,5 @@ XCTMain([
      testCase(RankTests.allTests),
      testCase(PokerTests.allTests),
      testCase(UtilTests.allTests),
+     testCase(DeckTests.allTests),
 ])
